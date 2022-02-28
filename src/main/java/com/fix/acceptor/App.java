@@ -30,9 +30,11 @@ public class App {
             Acceptor acceptor = new SocketAcceptor(acceptorApp, storeFactory, settings, logFactory, messageFactory);
             acceptor.start();
             boolean condition = true;
-            // while (condition == true) {
-            // Thread.sleep(100);
-            // }
+
+            System.out.println("FIX Acceptor STARTED!");
+            while (condition == true) {
+                Thread.sleep(100);
+            }
             acceptor.stop();
 
             System.out.println("Hello FIX Acceptor!");
