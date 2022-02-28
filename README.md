@@ -1,3 +1,3 @@
 # FIX Acceptor
 
-## FIX Acceptor standalone in Java.
+## FIX Server standalone in Java.
