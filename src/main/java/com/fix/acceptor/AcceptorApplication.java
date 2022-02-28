@@ -3,6 +3,7 @@ package com.fix.acceptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import quickfix.Application;
 import quickfix.DoNotSend;
 import quickfix.FieldNotFound;
 import quickfix.IncorrectDataFormat;
@@ -13,11 +14,11 @@ import quickfix.RejectLogon;
 import quickfix.SessionID;
 import quickfix.UnsupportedMessageType;
 
-public class Application extends MessageCracker implements quickfix.Application {
+public class AcceptorApplication extends MessageCracker implements Application {
 
     private final Logger log = LoggerFactory.getLogger(getClass());
 
-    public Application() {
+    public AcceptorApplication() {
 
     }
 

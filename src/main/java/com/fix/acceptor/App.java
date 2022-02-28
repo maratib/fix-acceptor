@@ -3,6 +3,7 @@ package com.fix.acceptor;
 import java.io.InputStream;
 
 import quickfix.Acceptor;
+import quickfix.Application;
 import quickfix.DefaultMessageFactory;
 import quickfix.FileLogFactory;
 import quickfix.FileStoreFactory;
@@ -21,13 +22,14 @@ public class App {
 
         try {
 
-            quickfix.Application acceptorApp = new Application();
+            Application acceptorApplication = new AcceptorApplication();
             SessionSettings settings = getSettingsInputStream();
 
             MessageStoreFactory storeFactory = new FileStoreFactory(settings);
             LogFactory logFactory = new FileLogFactory(settings);
             MessageFactory messageFactory = new DefaultMessageFactory();
-            Acceptor acceptor = new SocketAcceptor(acceptorApp, storeFactory, settings, logFactory, messageFactory);
+            Acceptor acceptor = new SocketAcceptor(
+                    acceptorApplication, storeFactory, settings, logFactory, messageFactory);
             acceptor.start();
             boolean condition = true;
 
